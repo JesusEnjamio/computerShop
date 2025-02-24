@@ -13,4 +13,11 @@ public class ComputadorTest {
         assertEquals("Windows 10", computador.getSistemaOperativo());
         assertEquals(1200.0, computador.getPrecio());
     }
+
+    @Test
+    public void testToString() {
+        Computador computador = new Computador("HP", 8, "AMD Ryzen 5", "Linux", 800.0);
+        String expected = "Computador{marca='HP', memoria=8GB, procesador='AMD Ryzen 5', sistemaOperativo='Linux', precio=800.0$}";
+        assertEquals(expected, computador.toString());
+}
 }
