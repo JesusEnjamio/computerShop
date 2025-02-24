@@ -1,4 +1,5 @@
 package dev.jesus.computers_shop.tienda;
+
 import dev.jesus.computers_shop.computador.Computador;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,17 @@ public class Tienda {
     public List<Computador> listarComputadores() {
         return new ArrayList<>(computadores);
     }
+
     public boolean eliminarComputador(String marca) {
         return computadores.removeIf(c -> c.getMarca().equalsIgnoreCase(marca));
+    }
+
+    public Computador buscarComputador(String marca) {
+        for (Computador computador : computadores) {
+            if (computador.getMarca().equalsIgnoreCase(marca)) {
+                return computador;
+            }
+        }
+        return null;
     }
 }
