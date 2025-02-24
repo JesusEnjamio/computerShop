@@ -23,4 +23,14 @@ public class TiendaTest {
         assertTrue(tienda.eliminarComputador("Dell"));
         assertEquals(0, tienda.listarComputadores().size());
     }
+
+    @Test
+    public void testBuscarComputador() {
+        Tienda tienda = new Tienda("TechStore", "John Doe", "ID123456789");
+        Computador computador = new Computador("Dell", 16, "Intel i7", "Windows 10", 1200.0);
+
+        tienda.agregarComputador(computador);
+        assertNotNull(tienda.buscarComputador("Dell"));
+        assertNull(tienda.buscarComputador("HP"));
+    }
 }
