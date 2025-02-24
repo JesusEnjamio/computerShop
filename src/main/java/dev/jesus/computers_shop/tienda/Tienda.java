@@ -23,4 +23,7 @@ public class Tienda {
     public List<Computador> listarComputadores() {
         return new ArrayList<>(computadores);
     }
+    public boolean eliminarComputador(String marca) {
+        return computadores.removeIf(c -> c.getMarca().equalsIgnoreCase(marca));
+    }
 }
